@@ -19,7 +19,6 @@ public class CalcPageCount {
             System.out.printf("필요한 게시판 페이지 갯수: %d\n", total/post);
         else // 일치하지 않을 경우
             System.out.printf("필요한 게시판 페이지 갯수: %d\n", (total/post)+1);
-        
 	}
 
 }
