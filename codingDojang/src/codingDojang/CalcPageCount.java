@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class CalcPageCount {
 	
 	public static void main(String[] args) {
-		
 		int total, post, page; // total(게시물의 총합), post(한 페이지당 보여줄 게시물 갯수), page(게시판의 페이지 갯수)
 
         Scanner input = new Scanner(System.in); // total과 post를 입력받기 위한 명령어.
@@ -20,7 +19,6 @@ public class CalcPageCount {
             System.out.printf("필요한 게시판 페이지 갯수: %d\n", total/post);
         else // 일치하지 않을 경우
             System.out.printf("필요한 게시판 페이지 갯수: %d\n", (total/post)+1);
-		
 	}
 
 }
