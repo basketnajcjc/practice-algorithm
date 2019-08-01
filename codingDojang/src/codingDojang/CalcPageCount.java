@@ -2,7 +2,16 @@ package codingDojang;
 
 import java.util.Scanner;
 
+/**
+ * @author Park Jae Cheul
+ *
+ */
 public class CalcPageCount {
+	
+	/*
+	 * 2019. 08. 01 
+	 * @author Park Jae Cheul
+	 */
 	
 	public static void main(String[] args) {
 		int total, post, page; // total(게시물의 총합), post(한 페이지당 보여줄 게시물 갯수), page(게시판의 페이지 갯수)

@@ -50,8 +50,6 @@ public class NameSoring {
 		resultList.sort(null); 
 		System.out.println(" # 4. 중복을 제거한 이름을 오름차순으로 정렬하여 출력하세요. " + resultList);
 		
-		
-		
 	}
 
 }

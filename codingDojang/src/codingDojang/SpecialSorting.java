@@ -9,7 +9,7 @@ public class SpecialSorting {
 
 	/*
 	 * * 2019. 08. 01 
-	 * by Park Jae Cheul
+	 * @author Park Jae Cheul
 	 * 
 	 * n개의 정수를 가진 배열이 있다. 
 	 * 이 배열은 양의정수와 음의 정수를 모두 가지고 있다. 
