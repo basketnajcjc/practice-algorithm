@@ -23,21 +23,33 @@ public class FibonacciNumber {
 	public static void main(String[] args) {
 		//
 		Scanner input = new Scanner(System.in);
-        System.out.print("항의 개수를 입력하시오 : ");
+        System.out.print("정수를 입력하시오 : ");
         int total = input.nextInt();
         
         List<Integer> list = new ArrayList<>();
         list.add(0);
         list.add(1);
+        
         int i;
         for(i=2; i<total; i++) {
+
         	int number = list.get(i-2) + list.get(i-1);
-        	list.add(number);
+        	if(number<=total) {
+        		list.add(number);
+        	} else {
+        		break;
+        	}
+        	
         }
         
         for(i=0; i<list.size(); i++) {
-        	System.out.print(list.get(i) + " ");
+        	
+        	if(list.get(i) <= total) {
+        		System.out.print(list.get(i) + " ");
+        	}
+        	
         }
+        
 	}
 
 }
