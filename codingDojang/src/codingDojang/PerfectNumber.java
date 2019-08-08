@@ -1,5 +1,9 @@
 package codingDojang;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  * @author Park Jae Cheul
  *
@@ -18,5 +22,33 @@ public class PerfectNumber {
 	 * 출력으로 N 이하의 모든 완전수를 출력하는 코드를 작성하라.	
 	 */
 	
+	public static void main(String[] args) {
+			Scanner scanner = new Scanner(System.in);
+			
+			int inputNumber = 0;
+			boolean inputCorrectFlag = true;
+			while(inputCorrectFlag) {
+				System.out.println("양의 정수 입력 : ");
+				inputNumber = scanner.nextInt();
+				if(inputNumber > 1) inputCorrectFlag = false;
+			}
+			
+			int i;
+			for(i=1; i<inputNumber; i++) {
+				showPerfectNumber(i);
+			}
+			
+	}
+	
+	static void showPerfectNumber(int number) {
+		int i = 0;
+		int sum = 0;		// sum : 약수들의 합 변수
+		for(i=1; i<number-1; i++) {
+			if(number%i == 0) sum += i;
+		}
+		
+		if(sum == number) System.out.print(sum + " ");
+		
+	}
 	
 }
