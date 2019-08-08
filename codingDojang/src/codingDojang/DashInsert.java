@@ -24,11 +24,11 @@ public class DashInsert {
 	 */
 	
 	public static void main(String[] args) {
-		String input = Scan();
-		System.out.println(" 결과 : " + DashInsert(input));
+		String input = scan();
+		System.out.println(" 결과 : " + dashInsert(input));
 	}
 	
-	static String Scan() {
+	static String scan() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("양의 정수를 입력해주세요!");
 		System.out.println(" > ");
@@ -37,7 +37,7 @@ public class DashInsert {
 		return Integer.toString(inputNumber);
 	}
 	
-	static String DashInsert(String input) {
+	static String dashInsert(String input) {
 		String result = input.substring(0, 1);;
 		
 		int i;
@@ -56,7 +56,5 @@ public class DashInsert {
 		
 		return result;
 	}
-	
-	
 	
 }
