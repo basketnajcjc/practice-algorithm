@@ -17,4 +17,32 @@ public class GeneratorNumber {
 	 * 예를 들어 1,3,5,7,9,20,31 은 셀프 넘버 들이다.
 	 * 1 이상이고 5000 보다 작은 모든 셀프 넘버들의 합을 구하라.
 	 */
+	
+	public static void main(String[] args) {
+		
+		
+		
+		int sum = 0;
+		int i;
+		for(i=1; i<5000; i++) {
+			if(isSelfNumber(i)) sum += i;
+		}
+		
+		
+		
+		System.out.println(" 1 이상이고 5000 보다 작은 셀프 넘버들의 합 : " + sum);
+	}
+	
+	static boolean isSelfNumber(int number) {
+		boolean isSelfNumber = false;
+		
+		
+		
+		
+		return isSelfNumber;
+	}
+	
+	static void d(int number) {
+		int result = 0;
+	}
 }
