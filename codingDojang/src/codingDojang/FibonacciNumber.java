@@ -32,22 +32,18 @@ public class FibonacciNumber {
         
         int i;
         for(i=2; i<total; i++) {
-
         	int number = list.get(i-2) + list.get(i-1);
         	if(number<=total) {
         		list.add(number);
         	} else {
         		break;
         	}
-        	
         }
         
         for(i=0; i<list.size(); i++) {
-        	
         	if(list.get(i) <= total) {
         		System.out.print(list.get(i) + " ");
         	}
-        	
         }
         
 	}
