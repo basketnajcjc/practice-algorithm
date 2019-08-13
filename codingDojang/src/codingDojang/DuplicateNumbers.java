@@ -19,9 +19,9 @@ public class DuplicateNumbers {
 	 */
 	
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in); // total과 post를 입력받기 위한 명령어.
+		Scanner input = new Scanner(System.in);
 
-        System.out.print("0~9까지의 숫자를 입력하시오: "); // 게시물의 총합을 입력받음
+        System.out.print("0~9까지의 숫자를 입력하시오: ");
         String lineString = input.nextLine();
         
         boolean duplicate = false;
@@ -40,7 +40,5 @@ public class DuplicateNumbers {
         }
         
         System.out.println(!duplicate);
-		
-		
 	}
 }
