@@ -1,5 +1,10 @@
 package codingDojang;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * @author Park Jae Cheul
  *
@@ -20,29 +25,22 @@ public class GeneratorNumber {
 	
 	public static void main(String[] args) {
 		
+		boolean[] generatorList = new boolean[5000];
+		Arrays.fill(generatorList, Boolean.FALSE);
 		
-		
-		int sum = 0;
-		int i;
-		for(i=1; i<5000; i++) {
-			if(isSelfNumber(i)) sum += i;
+		for(int i=1; i<5000; i++) {
+			
+			int number = i/1000 + (i%1000)/100 + (i%100)/10 + i%10 + i;
+			if(number>4999) continue;
+			generatorList[number] = true;	
 		}
 		
-		
-		
-		System.out.println(" 1 이상이고 5000 보다 작은 셀프 넘버들의 합 : " + sum);
+		int sum=0;
+		for(int i=1; i<5000; i++) {
+			if(!generatorList[i]) sum+=i;
+		}
+				
+		System.out.println("1 이상이고 5000 보다 작은 모든 셀프 넘버들의 합 : " + sum);
 	}
 	
-	static boolean isSelfNumber(int number) {
-		boolean isSelfNumber = false;
-		
-		
-		
-		
-		return isSelfNumber;
-	}
-	
-	static void d(int number) {
-		int result = 0;
-	}
 }
