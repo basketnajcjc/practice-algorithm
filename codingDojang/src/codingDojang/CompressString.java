@@ -1,5 +1,7 @@
 package codingDojang;
 
+import java.util.Scanner;
+
 /**
  * @author Park Jae Cheul
  *
@@ -15,5 +17,35 @@ public class CompressString {
 	 * 
 	 */
 	
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("문자열 입력 : ");
+		String input = scanner.nextLine();
+		
+		// input 값이 only String 인지 Exception 체크
+		
+		String result = "";
+		int count = 0;
+		for(int i=1; i<input.length(); i++) {
+			if(input.charAt(i-1) == input.charAt(i) ) {
+				count++;
+				continue;
+			} else {
+				result = result + input.charAt(i-1) + Integer.toString(count+1);
+			}
+			count = 0;
+		}
+		
+		// 위 로직은 앞의 문자를 기준으로 뒷 문자와 다를 시 앞 문자 갯수를 생성하므로,
+		// 추가로 마지막 전 문자와 마지막 문자가 다를 경우 비교.
+		if(input.charAt(input.length()-2) != input.charAt(input.length()-1)) {
+			result = result + input.charAt(input.length()-1) + "1";
+		}
+		
+		System.out.println(" 결과 : " + result);
+		
+		
+	}
 	
 }
