@@ -17,6 +17,71 @@ public class InsertComma {
 	 * 
 	 */
 	
+	public static void main(String[] args) {
+		System.out.println(InsertComma("1000"));
+		System.out.println(InsertComma("20000000"));
+		System.out.println(InsertComma("-3245.24"));
+	}
+	
+	/**
+	 * @param a
+	 * @return
+	 */
+	/**
+	 * @param a
+	 * @return
+	 */
+	public static String InsertComma(String a) {
+		String answer = "";
+		double doubleNumber;
+		
+		// a 가 숫자가 맞는지 체크
+		try {
+			doubleNumber = Double.parseDouble(a);
+		}
+		catch (Exception typeException) {
+			System.out.println(" 숫자를 입력해주세요!!!!!!! ");
+		}
+		
+		System.out.println(" a : " + a);
+		
+		boolean isDouble = (a.indexOf(".") > -1);
+		
+		// 인자가 2개일 경우 double, 아닐 경우 int 로 변환하고  
+		// 앞에 녀석에 대해서 int 변환 후 0 보다 작을 경우 -를 뺸 길이를 체크해서 , 추가
+		
+		int number = 0;
+		String belowDecimal = "";
+		if(isDouble) {
+			// double 타입일 경우
+			number = Integer.parseInt(a.substring(0, a.indexOf(".")));
+			belowDecimal = a.substring(a.indexOf("."));
+		} else {
+			number = Integer.parseInt(a);
+		}
+		
+		int i=0;
+		String temp = Integer.toString(number);
+		while(true) {
+			System.out.println("### while ,,, answer : " + answer);
+			if(number/(1000*(i+1)) > 0) {
+				answer = "," + temp.substring( temp.length() + (i+1)*(-3), temp.length() - i*3);
+				i++;
+				temp = temp.substring(0, temp.length()-3);
+			} else {
+				answer = temp + answer;
+				break;
+			}
+			
+		}
+		
+		if(isDouble) answer += belowDecimal;
+		
+		System.out.println("# answer : " + answer);
+		
+		return answer;
+	}
+	
 	
 	
 }
