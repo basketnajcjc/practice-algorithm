@@ -18,5 +18,30 @@ public class CountBackZero {
 	 * 
 	 */
 	
+	public static void main(String[] args) {
+		System.out.println("12를 입력하였을 때 뒤에서 부터 연속되는 0의 개수 : " + countBackZero(12));
+		System.out.println("25를 입력하였을 때 뒤에서 부터 연속되는 0의 개수 : " + countBackZero(25));
+	}
+	
+	static int countBackZero(int number) {
+		int answer = 0;
+		
+		// N! 값
+		long sum = 1;
+		for(int i=2; i<=number; i++) {
+			sum*=i;
+		}
+		
+		String sumString = Long.toString(sum);
+		for(int i=sumString.length(); i>0; i--) {
+			if(sumString.charAt(i-1) == '0') {
+				answer++;
+			} else {
+				break;
+			}
+		}
+		
+		return answer;
+	}
 
 }
