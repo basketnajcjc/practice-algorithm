@@ -25,11 +25,7 @@ public class InsertComma {
 	
 	/**
 	 * @param a
-	 * @return
-	 */
-	/**
-	 * @param a
-	 * @return
+	 * @return ',' 입력한 값
 	 */
 	public static String InsertComma(String a) {
 		String answer = "";
@@ -40,10 +36,8 @@ public class InsertComma {
 			doubleNumber = Double.parseDouble(a);
 		}
 		catch (Exception typeException) {
-			System.out.println(" 숫자를 입력해주세요!!!!!!! ");
+			System.out.println(" 숫자를 입력해주세요! ");
 		}
-		
-		System.out.println(" a : " + a);
 		
 		boolean isDouble = (a.indexOf(".") > -1);
 		
@@ -60,14 +54,14 @@ public class InsertComma {
 			number = Integer.parseInt(a);
 		}
 		
-		int i=0;
+		boolean isMinus = (number < 0);
+		if(isMinus) number *= -1;
 		String temp = Integer.toString(number);
 		while(true) {
-			System.out.println("### while ,,, answer : " + answer);
-			if(number/(1000*(i+1)) > 0) {
-				answer = "," + temp.substring( temp.length() + (i+1)*(-3), temp.length() - i*3);
-				i++;
-				temp = temp.substring(0, temp.length()-3);
+			if(number/1000 > 0) {
+				answer = "," + temp.substring( temp.length()-3) + answer;
+				number /= 1000;
+				temp = temp.substring(0, temp.length() + (-3));
 			} else {
 				answer = temp + answer;
 				break;
@@ -76,8 +70,7 @@ public class InsertComma {
 		}
 		
 		if(isDouble) answer += belowDecimal;
-		
-		System.out.println("# answer : " + answer);
+		if(isMinus) answer = "-" + answer;
 		
 		return answer;
 	}
