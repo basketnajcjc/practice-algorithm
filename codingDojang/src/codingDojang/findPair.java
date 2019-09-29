@@ -14,6 +14,30 @@ public class findPair {
 	*/
 	
 	public static void main(String[] args) {
+		int[] array = {1, 3, 4, 8, 13, 17, 20};
+		getCloseTwo(array);
+	}
+	
+	static void getCloseTwo(int[] array) {
+		
+		int frontNumber = 0;
+		int backNumber = 0;
+		int distance = 9999;
+		
+		for(int i=0; i<array.length; i++) {
+			for(int j=0; j<array.length; j++) {
+				
+				if(array[i] >= array[j] ) continue;
+				if((array[j]-array[i]) < distance) {
+					distance = array[j] - array[i];
+					frontNumber = array[i];
+					backNumber = array[j];
+				}
+				
+			}
+		}
+
+		System.out.println("(" + frontNumber + ", " + backNumber + ")");
 		
 	}
 	
