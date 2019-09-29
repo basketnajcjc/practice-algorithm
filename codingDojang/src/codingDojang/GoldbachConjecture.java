@@ -1,5 +1,9 @@
 package codingDojang;
 
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Park Jae Cheul
  *
@@ -19,7 +23,55 @@ public class GoldbachConjecture {
 	*/
 	
 	public static void main(String[] args) {
+		printPair(26);
+		System.out.println();
+		printPair(48);
+	}
+	
+	static void printPair(int a) {
 		
+		List<Integer> decimalList = getDecimal(2, a);
+		List<String> resultList = new ArrayList<String>();
+		for(int one : decimalList) {
+			for(int two : decimalList) {
+				if(one <= two ) {
+					
+					if(a == (one+two)) {
+						resultList.add("[" + one + ", " + two + "]");
+					}
+				}
+			}
+		}
+		
+		for(int i=0; i<resultList.size(); i++) {
+			
+			if(i == resultList.size() -1) {
+				System.out.printf(resultList.get(i));
+			} else {
+				System.out.printf(resultList.get(i) + ", ");
+			}
+			
+		}
+		
+	}
+	
+	static List<Integer> getDecimal(int n, int m) {
+		List<Integer> decimalList = new ArrayList<Integer>(); 
+		boolean isDecimal = true;
+		
+		for(int i=n; i<m+1; i++) {
+			isDecimal = true;
+			for(int j=2; j<i; j++) {
+				if(i%j == 0) {
+					isDecimal = false; 
+					break;
+				}
+			}
+			
+			if(isDecimal) decimalList.add(i);			
+		}
+		
+		return decimalList;
 	}
 	
 }
