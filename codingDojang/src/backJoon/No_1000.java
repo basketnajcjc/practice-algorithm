@@ -23,12 +23,6 @@ public class No_1000 {
 	}
 	
 	public static void clearScreen() {
-		
 		System.out.println("Delete Screen Content.");
-		
-//		for(int i=0; i<100; i++) {
-//			System.out.println("\b");
-//		}
-		
 	}
 }
